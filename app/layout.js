@@ -17,9 +17,7 @@ export const metadata = {
   description: "As a cadet, your health and well-beign are our top priority.",
 };
 
-Layout.propTypes = {
-  children: PropTypes.node.isRequired
-};
+
 
 export default function RootLayout({ children }) {
   return (

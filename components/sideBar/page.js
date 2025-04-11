@@ -40,6 +40,7 @@ import { IoHome, IoNotifications, IoPerson } from "react-icons/io5";
 import { FaFileMedical } from "react-icons/fa";
 
 const SideBar = ({ pushComponent, replaceComponent, popComponent, currentView }) => {
+  
   // Navigation items configuration
   const navItems = [
     { 

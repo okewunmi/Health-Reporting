@@ -1,6 +1,6 @@
 "use client"
 import React from 'react'
-import { Wrapper, Container, LogoContainer, FormContainer, ButtonContainer, Footer } from './styled'
+import { Wrapper, Container, LogoContainer, FormContainer,  Footer } from './styled'
 import Link from 'next/link'
 import Image from "next/image";
 
