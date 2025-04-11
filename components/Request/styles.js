@@ -30,6 +30,7 @@ color: #000;
 display: flex;
 flex-direction: column;
 gap: 1.3rem;
+background: white;
 // align-self: center;
 
 &__btn{
@@ -45,6 +46,12 @@ border-radius: .7rem;
 font-weight: 600;
 font-size: 1rem;
 cursor: pointer;
+transition: all .3s;
+
+&:hover{
+background-color:rgb(71, 146, 0);
+transform: scale(1.1);
+}
 
 }
 }

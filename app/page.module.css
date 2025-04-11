@@ -39,9 +39,9 @@
   
 }
 .Logo_box{
-  /* align-self: start;
+  align-self: start; 
   display: flex;
-  width: 100%; */
+  width: 100%; 
 }
 .main ol {
   font-family: var(--font-geist-mono);

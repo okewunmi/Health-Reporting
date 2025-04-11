@@ -1,17 +1,17 @@
 "use client"
 import styled from 'styled-components';
 
-export const Wrapper = styled.div `
+export const Wrapper = styled.div`
 width: 20%;
 background-color: #5F8D4E;
 border-top-left-radius: 10px;
 border-bottom-left-radius: 10px;
 height: 100%;
- font-family: monospace;
+font-family: monospace;
 `
 
-export const Content  = styled.div `
-margin-left: 12px;
+export const Content = styled.div`
+margin-left: 10px;
 border-right: 1px solid #ececec;
 height: 100%;
 
@@ -49,23 +49,22 @@ padding: 3px;
 
 &_img{
 width: 100%;
-hieght: 100%;
+height: 100%;
 object-fit: fit;
 border-radius: 100%;
 }
-
-
 }
 
 `
-export const Nav = styled.div `
+export const Nav = styled.div`
 border-top-left-radius: 30px;
 height: 100%;
 width: 100%;
- background-color: #ffff;
+background-color: #ffff;
 display: flex;
 flex-direction: column;
 align-items: start;
+
 
 
 .btn{
@@ -80,21 +79,47 @@ font-weight: 600;
 align-items: center;
 gap: 8px;
 font-size: 17px;
+border: none;
+cursor: pointer; 
+transition: all 0.3s ease; 
+// margin-left: -.2rem;
 
-&:hover{
- background-color: #5F8D4E;
- color:rgb(255, 255, 255);
- border-bottom-left-radius: 0px;
-border-top-left-radius: 0px;
-}
+&.active { 
+      background-color: #5F8D4E;
+      color: white;
+      border-bottom-left-radius: 0px;
+      border-top-left-radius: 0px;
+      // transform: translateX(5px);
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    }
 
 }
 
 
 `
-export const Footer = styled.div `
+export const Footer = styled.div`
 display: flex;
 background-color: #ffff;
-padding:20px  35px ;
+padding:20px 35px ;
+color: #000;
+border-top: 1px solid #ececec; 
+
+
+  .btn-LogOut{
+   display: flex;
+   align-items: center;
+   color:rgb(0, 0, 0);
+   font-weight: 600;
+   gap:1rem;
+   font-size: 17px;
+    border: none; 
+    cursor: pointer; 
+    transition: all 0.3s ease; 
+
+    &:hover {
+      background-color: #ff6b6b; 
+      color: white;
+    }
+  }
 
 `
