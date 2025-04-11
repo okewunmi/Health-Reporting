@@ -1,3 +1,4 @@
+import React from 'react';
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -14,6 +15,10 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "The Cadet Health Reporting System (CHRS)",
   description: "As a cadet, your health and well-beign are our top priority.",
+};
+
+Layout.propTypes = {
+  children: PropTypes.node.isRequired
 };
 
 export default function RootLayout({ children }) {
