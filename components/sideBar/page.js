@@ -39,6 +39,13 @@ import Image from 'next/image'
 import { IoHome, IoNotifications, IoPerson } from "react-icons/io5";
 import { FaFileMedical } from "react-icons/fa";
 
+/**
+ * @param {function(string): void} pushComponent - Adds new component to stack
+ * @param {function(string): void} replaceComponent - Replaces current component
+ * @param {function(): void} popComponent - Goes back to previous component
+ * @param {string} currentView - Currently active view identifier
+ */
+// @ts-nocheck
 const SideBar = ({ pushComponent, replaceComponent, popComponent, currentView }) => {
   
   // Navigation items configuration
