@@ -35,7 +35,7 @@ const SignUp = () => {
           
         </FormContainer>
         <Footer>
-                  <p>Don't have an account?</p>
+                  <p>Don&apos;t have an account?</p>
                   <Link href='/signUp' className='link'>Sign Up</Link>
                 </Footer>
       </Container >

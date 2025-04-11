@@ -32,19 +32,14 @@
 
 // export default page
 
-
+import PropTypes from 'prop-types';
 import React from 'react'
 import { Content, Nav, Wrapper, Footer } from './styles'
 import Image from 'next/image'
 import { IoHome, IoNotifications, IoPerson } from "react-icons/io5";
 import { FaFileMedical } from "react-icons/fa";
 
-/**
- * @param {function(string): void} pushComponent - Adds new component to stack
- * @param {function(string): void} replaceComponent - Replaces current component
- * @param {function(): void} popComponent - Goes back to previous component
- * @param {string} currentView - Currently active view identifier
- */
+
 // @ts-nocheck
 const SideBar = ({ pushComponent, replaceComponent, popComponent, currentView }) => {
   
@@ -126,5 +121,12 @@ const SideBar = ({ pushComponent, replaceComponent, popComponent, currentView })
     </Wrapper>
   )
 }
+
+SideBar.propTypes = {
+  pushComponent: PropTypes.func.isRequired, // or .func if not required
+  replaceComponent: PropTypes.func.isRequired,
+  popComponent: PropTypes.func.isRequired,
+  currentView: PropTypes.any.isRequired // Use more specific type if possible (string, number, etc.)
+};
 
 export default SideBar

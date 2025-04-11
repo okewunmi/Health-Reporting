@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types'; // Add this import
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -17,8 +18,6 @@ export const metadata = {
   description: "As a cadet, your health and well-beign are our top priority.",
 };
 
-
-
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
@@ -28,3 +27,8 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
+
+// Add prop type validation
+RootLayout.propTypes = {
+  children: PropTypes.node.isRequired,
+};
