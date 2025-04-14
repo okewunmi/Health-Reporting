@@ -110,15 +110,15 @@ border-top: 1px solid #ececec;
    align-items: center;
    color:rgb(0, 0, 0);
    font-weight: 600;
-   gap:1rem;
-   font-size: 17px;
+   gap:.5rem;
+   font-size: 16px;
     border: none; 
     cursor: pointer; 
     transition: all 0.3s ease; 
 
     &:hover {
-      background-color: #ff6b6b; 
-      color: white;
+     transform: scale(1.1);
+      color:rgb(101, 106, 119);
     }
   }
 

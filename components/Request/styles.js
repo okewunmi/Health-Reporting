@@ -19,7 +19,10 @@ font-weight: 600;
 // align-self: center;
 
 }
+.form__input[type="datetime-local"] {
 
+  filter: brightness(0) saturate(10%) invert(10%) sepia(10%) saturate(10%);
+}
 .form{
 border: 1px solid #cecece;
 width: 80%;
@@ -72,7 +75,10 @@ border-radius: .6rem;
 outline: none;
 font-size: .9rem;
 color:rgb(0, 0, 0);
+
+
 }
+
 
 &__Date{
 display: flex;
