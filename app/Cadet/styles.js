@@ -48,7 +48,7 @@ padding-left:20px;
 font-size:14px;
 font-weight:light;
  font-family: monospace;
- color:rgb(102, 102, 102)
+ color:rgb(102, 102, 102);
 }
 }
 

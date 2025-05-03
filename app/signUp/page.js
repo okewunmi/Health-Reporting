@@ -175,7 +175,7 @@ const SignUp = () => {
                             onChange={handleChange}
                             required
                         />
-                        <div className='level pic'>
+                        {/* <div className='level pic'>
                             <input
                                 ref={fileInputRef}
                                 className='inputBox'
@@ -199,7 +199,7 @@ const SignUp = () => {
                                     'Add Picture'
                                 )}
                             </button>
-                        </div>
+                        </div> */}
                         <div className='level'>
                             <input
                                 className='inputBox level1'

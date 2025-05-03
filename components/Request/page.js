@@ -58,8 +58,9 @@ import { Wrapper } from './styles'
 import { submitLeaveRequest } from '@/lib/appwrite'
 import { useRequests } from '../../Context/RequestContexts'
 
+
 const RequestForm = () => {
-    
+ 
   const [formData, setFormData] = useState({
     reason: '',
     startDate: '',
@@ -70,7 +71,7 @@ const RequestForm = () => {
   const [document, setDocument] = useState(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
-  const { incrementCount } = useRequests()
+  const { user, incrementCount } = useRequests()
 
   const handleChange = (e) => {
     setFormData({
@@ -80,14 +81,20 @@ const RequestForm = () => {
   }
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
-    setLoading(true)
-    setError('')
+    e.preventDefault();
+    setLoading(true);
+    setError('');
+
+    if (!user) {
+      setError('You must be logged in to submit a request');
+      setLoading(false);
+      return;
+    }
 
     try {
-      await submitLeaveRequest(formData, document)
-      alert('Request submitted successfully!')
-      incrementCount('total') // Increment the total count
+      await submitLeaveRequest(formData, document, user.$id); // Pass user.$id as third parameter
+      alert('Request submitted successfully!');
+      incrementCount('total');
       // Reset form
       setFormData({
         reason: '',
@@ -95,14 +102,14 @@ const RequestForm = () => {
         endDate: '',
         days: '',
         type: ''
-      })
-      setDocument(null)
+      });
+      setDocument(null);
     } catch (err) {
-      setError(err.message)
+      setError(err.message);
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
-  }
+  };
 
   return (
     <Wrapper>

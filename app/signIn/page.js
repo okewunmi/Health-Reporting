@@ -181,7 +181,7 @@ import React, { useState } from 'react'
 import { Wrapper, Container, LogoContainer, FormContainer, Footer } from '../signUp/styled'
 import Link from 'next/link'
 import Image from "next/image"
-import { signIn } from '../../lib/appwrite'
+import { signIn, getCurrentUser } from '../../lib/appwrite'
 import { useRouter } from 'next/navigation'
 
 const SignIn = () => {
@@ -192,22 +192,32 @@ const SignIn = () => {
   const router = useRouter()
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
-    setLoading(true)
-    setError('')
+    e.preventDefault();
+    setLoading(true);
+    setError('');
   
     try {
-      console.log('Attempting sign in...') // Debug log
-      await signIn(email, password)
-      console.log('Sign in successful, redirecting...') // Debug log
-      router.push('/Cadet')
+      console.log('Attempting sign in with:', email); // Debug log
+      await signIn(email, password);
+      
+      // Get the full user data after successful sign in
+      const userData = await getCurrentUser();
+      console.log('User data:', userData); // Debug log
+      
+      router.push('/Cadet');
     } catch (err) {
-      console.error('Sign in error:', err) // Debug log
-      setError(err.message || 'Login failed. Please try again.')
+      console.error('Sign in process error:', err); // Debug log
+      
+      // Handle specific error cases
+      if (err.message.includes('Network error')) {
+        setError('Cannot connect to server. Please check your internet connection.');
+      } else {
+        setError(err.message || 'Login failed. Please try again.');
+      }
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
-  }
+};
 
   return (
     <Wrapper>
